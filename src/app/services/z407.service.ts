@@ -21,15 +21,15 @@ export class Z407Service {
   }
 
   public async volumeUp() {
-    await this.connection.write(Commands.VOLUME_UP, Responses.VOLUME_UP);
+    await this.connection.writeWithoutVerify(Commands.VOLUME_UP);
   }
 
   public async volumeDown() {
-    await this.connection.write(Commands.VOLUME_DOWN, Responses.VOLUME_DOWN);
+    await this.connection.writeWithoutVerify(Commands.VOLUME_DOWN);
   }
 
   public async playPause() {
-    await this.connection.write(Commands.PLAY_PAUSE, Responses.PLAY_PAUSE);
+    await this.connection.writeWithoutVerify(Commands.PLAY_PAUSE);
   }
 
   public async switchBluetooth() {

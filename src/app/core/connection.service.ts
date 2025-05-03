@@ -189,5 +189,16 @@ export class ConnectionService {
     );
   }
 
+  public async writeWithoutVerify(command: number[]) {
+    if (!this.command) {
+      throw new Error('Command characteristic not found');
+    }
+
+    console.debug(`Writing ${command} to command characteristic`);
+    const buf = new Uint8Array(command);
+    await this.command.writeValueWithoutResponse(buf);
+    await this.response?.readValue();
+  }
+
   constructor() {}
 }
