@@ -1,12 +1,10 @@
-<div
-  class="h-screen w-screen p-6 flex items-center justify-center bg-stone-900"
->
+<div class="h-screen w-screen p-6 flex items-center justify-center bg-zinc-900">
   <div
     class="h-4/6 w-full max-h-5/6 max-w-sm grid grid-cols-3 grid-rows-4 items-center justify-center gap-3"
   >
     @if (connected === 'connected') {
     <a
-      class="row-span-2 col-span-2 flex flex-col w-full h-full items-center justify-center bg-stone-800 border border-stone-700 rounded-4xl shadow hover:bg-stone-700 cursor-pointer active:bg-stone-600"
+      class="row-span-2 col-span-2 flex flex-col w-full h-full items-center justify-center bg-zinc-800 border border-zinc-700 rounded-4xl shadow hover:bg-zinc-700 cursor-pointer active:bg-zinc-600"
       (click)="onPlayPauseClick()"
     >
       <svg
@@ -15,7 +13,7 @@
         viewBox="0 0 24 24"
         stroke-width="1.5"
         stroke="currentColor"
-        class="size-24 text-stone-100"
+        class="size-24 text-zinc-100"
       >
         <path
           stroke-linecap="round"
@@ -24,10 +22,10 @@
         />
       </svg>
 
-      <p class="text-sm text-stone-100">Play/Pause</p>
+      <p class="text-sm text-zinc-100">Play/Pause</p>
     </a>
     <a
-      class="row-span-1 col-span-1 flex flex-col h-full w-full items-center justify-center bg-stone-800 border border-stone-700 rounded-4xl shadow hover:bg-stone-700 cursor-pointer active:bg-stone-600"
+      class="row-span-1 col-span-1 flex flex-col h-full w-full items-center justify-center bg-zinc-800 border border-zinc-700 rounded-4xl shadow hover:bg-zinc-700 cursor-pointer active:bg-zinc-600"
       (click)="onVolumeUpClick()"
     >
       <svg
@@ -36,7 +34,7 @@
         viewBox="0 0 24 24"
         stroke-width="1.5"
         stroke="currentColor"
-        class="size-12 text-stone-100"
+        class="size-12 text-zinc-100"
       >
         <path
           stroke-linecap="round"
@@ -49,10 +47,10 @@
           d="m4.5 12.75 7.5-7.5 7.5 7.5"
         />
       </svg>
-      <p class="text-sm text-stone-100">Vol Up</p>
+      <p class="text-sm text-zinc-100">Vol Up</p>
     </a>
     <a
-      class="row-span-1 col-span-1 flex flex-col h-full w-full items-center justify-center bg-stone-800 border border-stone-700 rounded-4xl shadow hover:bg-stone-700 cursor-pointer active:bg-stone-600"
+      class="row-span-1 col-span-1 flex flex-col h-full w-full items-center justify-center bg-zinc-800 border border-zinc-700 rounded-4xl shadow hover:bg-zinc-700 cursor-pointer active:bg-zinc-600"
       (click)="onVolumeDownClick()"
     >
       <svg
@@ -61,7 +59,7 @@
         viewBox="0 0 24 24"
         stroke-width="1.5"
         stroke="currentColor"
-        class="size-12 text-stone-100"
+        class="size-12 text-zinc-100"
       >
         <path
           stroke-linecap="round"
@@ -69,14 +67,14 @@
           d="m4.5 5.25 7.5 7.5 7.5-7.5m-15 6 7.5 7.5 7.5-7.5"
         />
       </svg>
-      <p class="text-sm text-stone-100">Vol Down</p>
+      <p class="text-sm text-zinc-100">Vol Down</p>
     </a>
     <a
       class="row-span-1 col-span-1 flex flex-col h-full w-full items-center justify-center rounded-4xl border shadow cursor-pointer"
       [ngClass]="
         mode == 'bluetooth'
-          ? 'bg-stone-200 border-stone-100 hover:bg-stone-300 active:bg-stone-400 active:border-stone-400'
-          : 'bg-stone-800 border-stone-700 hover:bg-stone-700 active:bg-stone-600 active:border-stone-600'
+          ? 'bg-zinc-200 border-zinc-100 hover:bg-zinc-300 active:bg-zinc-400 active:border-zinc-400'
+          : 'bg-zinc-800 border-zinc-700 hover:bg-zinc-700 active:bg-zinc-600 active:border-zinc-600'
       "
       (click)="onBluetoothClick()"
     >
@@ -85,7 +83,7 @@
         viewBox="0 0 320 512"
         fill="currentColor"
         class="size-8"
-        [ngClass]="mode == 'bluetooth' ? 'text-stone-600' : 'text-stone-100'"
+        [ngClass]="mode == 'bluetooth' ? 'text-zinc-600' : 'text-zinc-100'"
       >
         <path
           d="M196.5 260l92.6-103.3L143.1 0v206.3l-86.1-86.1-31.4 31.4 108.1 108.4L25.6 368.4l31.4 31.4 86.1-86.1L145.8 512l148.6-148.6-97.9-103.3zm40.9-103l-50 50-.3-100.3 50.3 50.3zM187.4 313l50 50-50.3 50.3 .3-100.3z"
@@ -93,7 +91,7 @@
       </svg>
       <p
         class="text-sm pt-4"
-        [ngClass]="mode == 'bluetooth' ? 'text-stone-600' : 'text-stone-100'"
+        [ngClass]="mode == 'bluetooth' ? 'text-zinc-600' : 'text-zinc-100'"
       >
         Bluetooth
       </p>
@@ -102,8 +100,8 @@
       class="row-span-1 col-span-1 flex flex-col h-full w-full items-center justify-center rounded-4xl border shadow cursor-pointer"
       [ngClass]="
         mode == 'aux'
-          ? 'bg-stone-200 border-stone-100 hover:bg-stone-300 active:bg-stone-400 active:border-stone-400'
-          : 'bg-stone-800 border-stone-700 hover:bg-stone-700 active:bg-stone-600 active:border-stone-600'
+          ? 'bg-zinc-200 border-zinc-100 hover:bg-zinc-300 active:bg-zinc-400 active:border-zinc-400'
+          : 'bg-zinc-800 border-zinc-700 hover:bg-zinc-700 active:bg-zinc-600 active:border-zinc-600'
       "
       (click)="onAuxClick()"
     >
@@ -112,7 +110,7 @@
         viewBox="0 0 512 512"
         fill="currentColor"
         class="size-8"
-        [ngClass]="mode == 'aux' ? 'text-stone-600' : 'text-stone-100'"
+        [ngClass]="mode == 'aux' ? 'text-zinc-600' : 'text-zinc-100'"
       >
         <!--!Font Awesome Free 6.7.2 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free Copyright 2025 Fonticons, Inc.-->
         <path
@@ -121,7 +119,7 @@
       </svg>
       <p
         class="text-sm pt-4"
-        [ngClass]="mode == 'aux' ? 'text-stone-600' : 'text-stone-100'"
+        [ngClass]="mode == 'aux' ? 'text-zinc-600' : 'text-zinc-100'"
       >
         AUX
       </p>
@@ -130,8 +128,8 @@
       class="row-span-1 col-span-1 flex flex-col h-full w-full items-center justify-center rounded-4xl border shadow cursor-pointer"
       [ngClass]="
         mode == 'usb'
-          ? 'bg-stone-200 border-stone-100 hover:bg-stone-300 active:bg-stone-400 active:border-stone-400'
-          : 'bg-stone-800 border-stone-700 hover:bg-stone-700 active:bg-stone-600 active:border-stone-600'
+          ? 'bg-zinc-200 border-zinc-100 hover:bg-zinc-300 active:bg-zinc-400 active:border-zinc-400'
+          : 'bg-zinc-800 border-zinc-700 hover:bg-zinc-700 active:bg-zinc-600 active:border-zinc-600'
       "
       (click)="onUsbClick()"
     >
@@ -140,7 +138,7 @@
         viewBox="0 0 640 512"
         fill="currentColor"
         class="size-8"
-        [ngClass]="mode == 'usb' ? 'text-stone-600' : 'text-stone-100'"
+        [ngClass]="mode == 'usb' ? 'text-zinc-600' : 'text-zinc-100'"
       >
         <!--!Font Awesome Free 6.7.2 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free Copyright 2025 Fonticons, Inc.-->
         <path
@@ -149,33 +147,33 @@
       </svg>
       <p
         class="text-sm pt-4"
-        [ngClass]="mode == 'usb' ? 'text-stone-600' : 'text-stone-100'"
+        [ngClass]="mode == 'usb' ? 'text-zinc-600' : 'text-zinc-100'"
       >
         USB
       </p>
     </a>
     <a
-      class="row-span-1 col-span-3 w-full h-full flex flex-col p-6 items-center justify-center bg-stone-800 border border-stone-700 rounded-4xl shadow hover:bg-stone-700 cursor-pointer active:bg-stone-600"
+      class="row-span-1 col-span-3 w-full h-full flex flex-col p-6 items-center justify-center bg-zinc-800 border border-zinc-700 rounded-4xl shadow hover:bg-zinc-700 cursor-pointer active:bg-zinc-600"
       (click)="onDisconnectClick()"
     >
-      <p class="text-sm text-stone-100">Disconnect</p>
+      <p class="text-sm text-zinc-100">Disconnect</p>
     </a>
     } @else {
     <a
-      class="row-span-4 col-span-3 flex flex-col w-full h-full items-center justify-center bg-stone-800 border border-stone-700 rounded-4xl shadow hover:bg-stone-700 cursor-pointer active:bg-stone-600"
+      class="row-span-4 col-span-3 flex flex-col w-full h-full items-center justify-center bg-zinc-800 border border-zinc-700 rounded-4xl shadow hover:bg-zinc-700 cursor-pointer active:bg-zinc-600"
       (click)="onConnectClick()"
     >
       <svg
         xmlns="http://www.w3.org/2000/svg"
         viewBox="0 0 320 512"
         fill="currentColor"
-        class="size-32 text-stone-100"
+        class="size-32 text-zinc-100"
       >
         <path
           d="M196.5 260l92.6-103.3L143.1 0v206.3l-86.1-86.1-31.4 31.4 108.1 108.4L25.6 368.4l31.4 31.4 86.1-86.1L145.8 512l148.6-148.6-97.9-103.3zm40.9-103l-50 50-.3-100.3 50.3 50.3zM187.4 313l50 50-50.3 50.3 .3-100.3z"
         />
       </svg>
-      <p class="text-sm pt-6 text-stone-100">Connect</p>
+      <p class="text-sm pt-6 text-zinc-100">Connect</p>
     </a>
     }
   </div>
