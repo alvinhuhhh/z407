@@ -3,8 +3,8 @@
     class="w-full max-w-sm min-h-140 max-h-4/6 mx-6 grid grid-cols-3 grid-rows-4 items-center justify-center gap-1 lg:gap-3"
   >
     @if (connected === 'connected') {
-    <a
-      class="touch-manipulation cursor-pointer row-span-2 col-span-2 flex flex-col w-full h-full items-center justify-center bg-zinc-800 border border-zinc-700 rounded-4xl shadow hover:bg-zinc-700 active:bg-zinc-600"
+    <button
+      class="row-span-2 col-span-2 flex flex-col w-full h-full items-center justify-center rounded-4xl cursor-pointer bg-zinc-800 hover:bg-zinc-700 focus:outline-2 focus:outline-offset-2 focus:outline-zinc-600 active:bg-zinc-600"
       (click)="onPlayPauseClick()"
     >
       <svg
@@ -21,11 +21,10 @@
           d="M21 7.5V18M15 7.5V18M3 16.811V8.69c0-.864.933-1.406 1.683-.977l7.108 4.061a1.125 1.125 0 0 1 0 1.954l-7.108 4.061A1.125 1.125 0 0 1 3 16.811Z"
         />
       </svg>
-
       <p class="text-sm text-zinc-100">Play/Pause</p>
-    </a>
-    <a
-      class="touch-manipulation cursor-pointer row-span-1 col-span-1 flex flex-col w-full h-full items-center justify-center bg-zinc-800 border border-zinc-700 rounded-4xl shadow hover:bg-zinc-700 active:bg-zinc-600"
+    </button>
+    <button
+      class="row-span-1 col-span-1 flex flex-col w-full h-full items-center justify-center rounded-4xl cursor-pointer bg-zinc-800 hover:bg-zinc-700 focus:outline-2 focus:outline-offset-2 focus:outline-zinc-600 active:bg-zinc-600"
       (click)="onVolumeUpClick()"
     >
       <svg
@@ -48,9 +47,9 @@
         />
       </svg>
       <p class="text-sm text-zinc-100">Vol Up</p>
-    </a>
-    <a
-      class="touch-manipulation cursor-pointer row-span-1 col-span-1 flex flex-col w-full h-full items-center justify-center bg-zinc-800 border border-zinc-700 rounded-4xl shadow hover:bg-zinc-700 active:bg-zinc-600"
+    </button>
+    <button
+      class="row-span-1 col-span-1 flex flex-col w-full h-full items-center justify-center rounded-4xl cursor-pointer bg-zinc-800 hover:bg-zinc-700 focus:outline-2 focus:outline-offset-2 focus:outline-zinc-600 active:bg-zinc-600"
       (click)="onVolumeDownClick()"
     >
       <svg
@@ -68,13 +67,13 @@
         />
       </svg>
       <p class="text-sm text-zinc-100">Vol Down</p>
-    </a>
-    <a
-      class="touch-manipulation row-span-1 col-span-1 flex flex-col h-full w-full items-center justify-center rounded-4xl border shadow cursor-pointer"
+    </button>
+    <button
+      class="row-span-1 col-span-1 flex flex-col h-full w-full items-center justify-center rounded-4xl cursor-pointer"
       [ngClass]="
         mode == 'bluetooth'
-          ? 'bg-zinc-200 border-zinc-100 hover:bg-zinc-300 active:bg-zinc-400 active:border-zinc-400'
-          : 'bg-zinc-800 border-zinc-700 hover:bg-zinc-700 active:bg-zinc-600 active:border-zinc-600'
+          ? 'bg-zinc-200 hover:bg-zinc-300 focus:outline-2 focus:outline-offset-2 focus:outline-zinc-400 active:bg-zinc-400'
+          : 'bg-zinc-800 hover:bg-zinc-700 focus:outline-2 focus:outline-offset-2 focus:outline-zinc-600 active:bg-zinc-600'
       "
       (click)="onBluetoothClick()"
     >
@@ -95,13 +94,13 @@
       >
         Bluetooth
       </p>
-    </a>
-    <a
-      class="touch-manipulation row-span-1 col-span-1 flex flex-col h-full w-full items-center justify-center rounded-4xl border shadow cursor-pointer"
+    </button>
+    <button
+      class="row-span-1 col-span-1 flex flex-col h-full w-full items-center justify-center rounded-4xl cursor-pointer"
       [ngClass]="
         mode == 'aux'
-          ? 'bg-zinc-200 border-zinc-100 hover:bg-zinc-300 active:bg-zinc-400 active:border-zinc-400'
-          : 'bg-zinc-800 border-zinc-700 hover:bg-zinc-700 active:bg-zinc-600 active:border-zinc-600'
+          ? 'bg-zinc-200 hover:bg-zinc-300 focus:outline-2 focus:outline-offset-2 focus:outline-zinc-400 active:bg-zinc-400'
+          : 'bg-zinc-800 hover:bg-zinc-700 focus:outline-2 focus:outline-offset-2 focus:outline-zinc-600 active:bg-zinc-600'
       "
       (click)="onAuxClick()"
     >
@@ -123,13 +122,13 @@
       >
         AUX
       </p>
-    </a>
-    <a
-      class="touch-manipulation row-span-1 col-span-1 flex flex-col h-full w-full items-center justify-center rounded-4xl border shadow cursor-pointer"
+    </button>
+    <button
+      class="row-span-1 col-span-1 flex flex-col h-full w-full items-center justify-center rounded-4xl cursor-pointer"
       [ngClass]="
         mode == 'usb'
-          ? 'bg-zinc-200 border-zinc-100 hover:bg-zinc-300 active:bg-zinc-400 active:border-zinc-400'
-          : 'bg-zinc-800 border-zinc-700 hover:bg-zinc-700 active:bg-zinc-600 active:border-zinc-600'
+          ? 'bg-zinc-200 hover:bg-zinc-300 focus:outline-2 focus:outline-offset-2 focus:outline-zinc-400 active:bg-zinc-400'
+          : 'bg-zinc-800 hover:bg-zinc-700 focus:outline-2 focus:outline-offset-2 focus:outline-zinc-600 active:bg-zinc-600'
       "
       (click)="onUsbClick()"
     >
@@ -151,16 +150,16 @@
       >
         USB
       </p>
-    </a>
-    <a
-      class="touch-manipulation cursor-pointer row-span-1 col-span-3 flex flex-col w-full h-full items-center justify-center bg-zinc-800 border border-zinc-700 rounded-4xl shadow hover:bg-zinc-700 active:bg-zinc-600"
+    </button>
+    <button
+      class="row-span-1 col-span-3 flex flex-col w-full h-full items-center justify-center rounded-4xl cursor-pointer bg-zinc-800 hover:bg-zinc-700 focus:outline-2 focus:outline-offset-2 focus:outline-zinc-600 active:bg-zinc-600"
       (click)="onDisconnectClick()"
     >
       <p class="text-sm text-zinc-100">Disconnect</p>
-    </a>
+    </button>
     } @else {
-    <a
-      class="touch-manipulation cursor-pointer row-span-4 col-span-3 flex flex-col w-full h-full items-center justify-center bg-zinc-800 border border-zinc-700 rounded-4xl shadow hover:bg-zinc-700 active:bg-zinc-600"
+    <button
+      class="row-span-4 col-span-3 flex flex-col w-full h-full items-center justify-center rounded-4xl cursor-pointer bg-zinc-800 hover:bg-zinc-700 focus:outline-2 focus:outline-offset-2 focus:outline-zinc-600 active:bg-zinc-600"
       (click)="onConnectClick()"
     >
       <svg
@@ -174,7 +173,7 @@
         />
       </svg>
       <p class="text-sm pt-6 text-zinc-100">Connect</p>
-    </a>
+    </button>
     }
   </div>
 </div>
