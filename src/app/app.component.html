@@ -1,37 +1,31 @@
 <div class="h-screen w-screen flex items-center justify-center bg-zinc-900">
   <div
-    class="w-full max-w-sm min-h-140 max-h-4/6 mx-6 grid grid-cols-3 grid-rows-4 items-center justify-center gap-1 lg:gap-3"
+    class="w-full max-w-sm min-h-160 max-h-5/6 mx-6 grid grid-cols-3 grid-rows-5 items-center justify-center gap-1 lg:gap-3"
   >
     @if (connected === 'connected') {
+    <!-- Pairing and bass control -->
     <div class="row-span-1 col-span-1 h-full w-full">
       <app-control-button
-        (click)="onBluetoothClick()"
-        text="Bluetooth"
-        icon="bluetooth"
+        (click)="onPairingModeClick()"
+        text="Pairing"
+        icon="pair"
         iconSize="m"
       />
     </div>
-    <div class="row-span-1 col-span-1 h-full w-full">
+    <div class="row-span-1 col-span-2 h-full w-full">
       <app-control-button
-        (click)="onAuxClick()"
-        text="Aux"
-        icon="aux"
+        text="Bass Control"
+        icon="bass"
         iconSize="m"
       />
     </div>
-    <div class="row-span-1 col-span-1 h-full w-full">
-      <app-control-button
-        (click)="onUsbClick()"
-        text="USB"
-        icon="usb"
-        iconSize="m"
-      />
-    </div>
+
+    <!-- Play controls -->
     <div class="row-span-2 col-span-2 h-full w-full">
       <app-control-button
         (click)="onPlayPauseClick()"
         text="Play/Pause"
-        icon="play/pause"
+        icon="play"
         iconSize="l"
       />
     </div>
@@ -51,11 +45,39 @@
         iconSize="m"
       />
     </div>
+
+    <!-- Connection sources -->
+    <div class="row-span-1 col-span-1 h-full w-full">
+      <app-control-button
+        (click)="onBluetoothClick()"
+        text="Bluetooth"
+        icon="bluetooth"
+        iconSize="m"
+      />
+    </div>
+    <div class="row-span-1 col-span-1 h-full w-full">
+      <app-control-button
+        (click)="onAuxClick()"
+        text="AUX"
+        icon="aux"
+        iconSize="m"
+      />
+    </div>
+    <div class="row-span-1 col-span-1 h-full w-full">
+      <app-control-button
+        (click)="onUsbClick()"
+        text="USB"
+        icon="usb"
+        iconSize="m"
+      />
+    </div>
+
+    <!-- Disconnect button -->
     <div class="row-span-1 col-span-3 h-full w-full">
       <app-control-button (click)="onDisconnectClick()" text="Disconnect" />
     </div>
     } @else {
-    <div class="row-span-4 col-span-3 h-full w-full">
+    <div class="row-span-5 col-span-3 h-full w-full">
       <app-control-button
         (click)="onConnectClick()"
         text="Connect"
