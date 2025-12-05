@@ -6,8 +6,6 @@ RUN node --version
 WORKDIR /home/app
 # Copy source files
 COPY . .
-# Copy package.json and package-lock.json
-# COPY package*.json ./
 # Install dependencies
 RUN npm ci
 # Compile and build
