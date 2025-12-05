@@ -1,13 +1,15 @@
 ## BUILD
 FROM node:lts-alpine AS build
+# Check node version
+RUN node --version
 # Create working directory within Docker
 WORKDIR /home/app
-# Copy package.json and package-lock.json
-COPY package*.json ./
-# Install dependencies
-RUN npm ci
 # Copy source files
 COPY . .
+# Copy package.json and package-lock.json
+# COPY package*.json ./
+# Install dependencies
+RUN npm ci
 # Compile and build
 RUN npm run build
 
