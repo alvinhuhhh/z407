@@ -28,8 +28,24 @@ export class Z407Service {
     await this.connection.writeWithoutVerify(Commands.VOLUME_DOWN);
   }
 
+  public async bassUp() {
+    await this.connection.write(Commands.BASS_UP, Responses.BASS_UP);
+  }
+
+  public async bassDown() {
+    await this.connection.write(Commands.BASS_DOWN, Responses.BASS_DOWN);
+  }
+
   public async playPause() {
     await this.connection.writeWithoutVerify(Commands.PLAY_PAUSE);
+  }
+
+  public async nextTrack() {
+    await this.connection.write(Commands.NEXT_TRACK, Responses.NEXT_TRACK);
+  }
+
+  public async prevTrack() {
+    await this.connection.write(Commands.PREV_TRACK, Responses.PREV_TRACK);
   }
 
   public async switchBluetooth() {
@@ -59,10 +75,6 @@ export class Z407Service {
       Commands.FACTORY_RESET,
       Responses.FACTORY_RESET
     );
-  }
-
-  public async bassControl() {
-    await this.connection.write(Commands.BASS_CONTROL, Responses.BASS_CONTROL);
   }
 
   constructor(private connection: ConnectionService) {}

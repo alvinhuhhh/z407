@@ -9,7 +9,12 @@ export class Responses {
 
   static readonly VOLUME_UP = [0xc0, 0x02];
   static readonly VOLUME_DOWN = [0xc0, 0x03];
+  static readonly BASS_UP = [0xc0, 0x00];
+  static readonly BASS_DOWN = [0xc0, 0x01];
+
   static readonly PLAY_PAUSE = [0xc0, 0x04];
+  static readonly NEXT_TRACK = [0xc0, 0x05];
+  static readonly PREV_TRACK = [0xc0, 0x06];
 
   static readonly SWITCH_BLUETOOTH = [0xc1, 0x01];
   static readonly SWITCH_AUX = [0xc1, 0x02];
@@ -17,5 +22,4 @@ export class Responses {
 
   static readonly BT_PAIRING_MODE = [0xc2, 0x00];
   static readonly FACTORY_RESET = [0xc3, 0x00];
-  static readonly BASS_CONTROL = [0xc5, 0x02];
 }

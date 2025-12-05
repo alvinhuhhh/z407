@@ -12,7 +12,7 @@ import { ControlButtonComponent } from './components/control-button/control-butt
 })
 export class AppComponent implements OnInit {
   public connected: 'connected' | 'disconnected' = 'disconnected';
-  public mode: 'bluetooth' | 'aux' | 'usb' | undefined = undefined;
+  public mode: 'volume' | 'bass' = 'volume';
 
   public async onConnectClick() {
     this.z407.connect().then(() => {
@@ -23,11 +23,18 @@ export class AppComponent implements OnInit {
   public async onDisconnectClick() {
     this.z407.disconnect();
     this.connected = 'disconnected';
-    this.mode = undefined;
   }
 
   public async onPlayPauseClick() {
     this.z407.playPause();
+  }
+
+  public async onNextClick() {
+    this.z407.nextTrack();
+  }
+
+  public async onPrevClick() {
+    this.z407.prevTrack();
   }
 
   public async onVolumeUpClick() {
@@ -38,22 +45,32 @@ export class AppComponent implements OnInit {
     this.z407.volumeDown();
   }
 
+  public async onBassUpClick() {
+    this.z407.bassUp();
+  }
+
+  public async onBassDownClick() {
+    this.z407.bassDown();
+  }
+
   public async onBluetoothClick() {
-    this.z407.switchBluetooth().then(() => {
-      this.mode = 'bluetooth';
-    });
+    this.z407.switchBluetooth();
   }
 
   public async onAuxClick() {
-    this.z407.switchAux().then(() => {
-      this.mode = 'aux';
-    });
+    this.z407.switchAux();
   }
 
   public async onUsbClick() {
-    this.z407.switchUsb().then(() => {
-      this.mode = 'usb';
-    });
+    this.z407.switchUsb();
+  }
+
+  public onBassControlClick() {
+    if (this.mode === 'volume') {
+      this.mode = 'bass';
+    } else {
+      this.mode = 'volume';
+    }
   }
 
   public async onPairingModeClick() {

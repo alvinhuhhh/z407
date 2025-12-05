@@ -2,11 +2,13 @@ export type Icon =
   | 'play'
   | 'up'
   | 'down'
+  | 'next'
+  | 'prev'
+  | 'louder'
+  | 'softer'
   | 'bluetooth'
   | 'aux'
-  | 'usb'
-  | 'pair'
-  | 'bass';
+  | 'usb';
 
 export type IconSize = 's' | 'm' | 'l' | 'xl';
 
