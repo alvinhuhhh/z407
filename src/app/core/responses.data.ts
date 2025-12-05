@@ -15,6 +15,7 @@ export class Responses {
   static readonly SWITCH_AUX = [0xc1, 0x02];
   static readonly SWITCH_USB = [0xc1, 0x03];
 
+  static readonly BT_PAIRING_MODE = [0xc2, 0x00];
   static readonly FACTORY_RESET = [0xc3, 0x00];
   static readonly BASS_CONTROL = [0xc5, 0x02];
 }

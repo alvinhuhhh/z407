@@ -1,14 +1,13 @@
 /// <reference types="web-bluetooth" />
 
 import { Component, OnInit } from '@angular/core';
-import { RouterOutlet } from '@angular/router';
 import { initFlowbite } from 'flowbite';
 import { Z407Service } from './services/z407.service';
-import { NgClass } from '@angular/common';
+import { ControlButtonComponent } from './components/control-button/control-button.component';
 
 @Component({
   selector: 'app-root',
-  imports: [RouterOutlet, NgClass],
+  imports: [ControlButtonComponent],
   templateUrl: './app.component.html',
 })
 export class AppComponent implements OnInit {
@@ -55,6 +54,10 @@ export class AppComponent implements OnInit {
     this.z407.switchUsb().then(() => {
       this.mode = 'usb';
     });
+  }
+
+  public async onPairingModeClick() {
+    this.z407.enterPairingMode();
   }
 
   constructor(private readonly z407: Z407Service) {}

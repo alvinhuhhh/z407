@@ -15,6 +15,7 @@ export class Commands {
   static readonly SWITCH_AUX = [0x81, 0x02];
   static readonly SWITCH_USB = [0x81, 0x03];
 
+  static readonly BT_PAIRING_MODE = [0x82, 0x00];
   static readonly FACTORY_RESET = [0x83, 0x00];
   static readonly BASS_CONTROL = [0x85, 0x02];
 }

@@ -47,6 +47,13 @@ export class Z407Service {
     await this.connection.write(Commands.SWITCH_USB, Responses.SWITCH_USB);
   }
 
+  public async enterPairingMode() {
+    await this.connection.write(
+      Commands.BT_PAIRING_MODE,
+      Responses.BT_PAIRING_MODE
+    );
+  }
+
   public async factoryReset() {
     await this.connection.write(
       Commands.FACTORY_RESET,
